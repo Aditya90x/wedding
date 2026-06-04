@@ -85,6 +85,28 @@ export default function Scene01DivineOpening() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.2)_0%,transparent_70%)] animate-[pulse_4s_infinite]" />
       </div>
 
+      {/* 1.5) Continuous Glowing Mandala (Background Graphic) */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 0.35, scale: 1 }}
+        transition={{ duration: 2 }}
+        className="absolute w-[90vw] h-[90vw] max-w-[600px] max-h-[600px] mix-blend-screen pointer-events-none z-0 flex items-center justify-center opacity-30"
+      >
+        <motion.div 
+          animate={{ rotate: 360 }}
+          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          className="relative w-full h-full"
+        >
+          <Image
+            src="/images/scene02_ganesh.png"
+            alt="Sacred Mandala Background"
+            fill
+            className="object-cover drop-shadow-[0_0_30px_rgba(212,175,55,0.8)]"
+            style={{ objectPosition: "top" }}
+          />
+        </motion.div>
+      </motion.div>
+
       {/* 2) Floating Glowing Particles */}
       <div className="absolute inset-0 z-10 pointer-events-none">
         {mounted && PARTICLES.map((p, i) => (
